@@ -1,0 +1,248 @@
+@charset "UTF-8";
+
+/* 共通部分
+--------------------- */
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: Arial;
+    line-height: 1.5;
+    color: #555555;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+:root {
+    --main-color: #EFA358;
+    --hover-color: #dd7b19;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+
+
+/* HOME
+---------------------- */
+.logo-nav {
+    height: 80px;
+    background-color: var(--main-color);
+    display: flex;
+}
+
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    padding: 0 20px;
+}
+
+.logo-text {
+    font-size: 28.4px;
+}
+
+h1 {
+    color: #FFFFFF;
+}
+
+.main-nav {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav a {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.main-nav a:hover {
+    color: var(--hover-color);
+}
+
+
+
+.hero {
+    background: url(../images/fv1.jpg) no-repeat center center / cover;
+    min-height: 603px;
+}
+
+
+
+.main-container {
+    max-width: min(1000px, 100%);
+    margin-bottom: min(101px, 7.39%);
+    display: flex; 
+    flex-direction: column;
+    container-type: inline-size;
+    container-name: main;
+}
+
+.main-title {
+    margin: 40px auto 47px;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.main2-container {
+    display: flex;
+    margin-bottom: 1px;
+}
+
+.main2-container img {
+    max-height: 329px;
+    padding-left: 20px;
+}
+
+.text-container {
+    margin: 0 21px 0 60px;
+}
+
+.text-title {
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.text-1 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 36px;
+}
+
+.text-2 {
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+
+.button {
+    width: 196px;
+    height: 46px;
+    background-color: var(--main-color);
+    border-radius: 10px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    box-shadow: 0 3px 6px #00000029;
+    transition: background-color 0.15s ease;
+}
+
+.button:hover {
+    background-color: var(--hover-color);
+}
+
+.button p {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+
+/*-- コンテイナークエリ --*/
+@container main (width < 1000px) {
+
+    .main-title {
+        font-size: clamp(1.5rem, 1.333rem + 0.83vw, 2rem);
+        margin: 40px auto 3.45%;
+    }
+
+    .main2-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: max(3%, 40px);
+    }
+
+    .main2-container img {
+        width: 80vw;
+        max-width: 450px;
+        aspect-ratio: 480 / 329;
+        max-height: 100%;
+        padding: 0;
+        margin: 0 auto 3.8%;
+    }
+
+    .text-container {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .text-title {
+        font-size: clamp(1.25rem, 1rem + 1.25vw, 2rem);
+    }
+
+    .text-1 {
+        font-size: clamp(0.75rem, 0.667rem + 0.42vw, 1rem);
+        margin-top: 2.8%;
+    }
+    
+    .text-2 {
+        font-size: clamp(0.75rem, 0.667rem + 0.42vw, 1rem);
+        margin-top: 2.8%;
+    }
+
+    .button {
+        width: 196px;
+        height: 46px;
+        margin-top: 30px;
+    }
+
+    .button p {
+        font-size: clamp(0.875rem, 0.833rem + 0.21vw, 1rem);
+    }
+}
+/*-- /コンテイナークエリ --*/
+
+
+
+/* モバイル版
+--------------------------- */
+@media (max-width: 1000px)  {
+    .logo-nav {
+        height: 70px;
+    }
+
+    .main-nav {
+        /* position: fixed;
+        top: -150px; */
+    }
+
+}
+
+.footer-container {
+    height: 100px;
+    background-color: var(--main-color);
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-logo {
+    margin: 20px auto 23px;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.foorer-copy {
+    margin: 1px auto 19px;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
